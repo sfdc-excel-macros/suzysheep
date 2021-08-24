@@ -16,4 +16,10 @@ public class HomeController {
         return "this is a test: " + req.getParameter("foo");
     }
 
+    @RequestMapping(value="/hey")
+    @ResponseBody
+    public String hey(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.getOutputStream().print("haha: " + req.getParameter("f"));
+        return "heyo " + req.getParameter("foo");
+    }
 }
